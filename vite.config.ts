@@ -5,8 +5,6 @@ import path from 'node:path'
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig({
-  // Use '/' for custom domains or root hosting. 
-  // (If deploying to GitHub Pages under a project path like /portfolio/, change this to '/portfolio/' later)
   base: '/',
   plugins: [
     react(),
