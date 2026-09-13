@@ -3025,15 +3025,18 @@ function IpodImage({
       setErr(false);
       return;
     }
+    setLoaded(false);
+    setErr(false);
+
     const img = new window.Image();
+    img.onload = () => setLoaded(true);
+    img.onerror = () => setErr(true);
     img.src = src;
-    if (img.complete && img.naturalWidth > 0) {
-      setLoaded(true);
-      setErr(false);
-    } else {
-      setLoaded(false);
-      setErr(false);
-    }
+
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [src]);
 
   if (!src || err) {
