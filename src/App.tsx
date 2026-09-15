@@ -1673,12 +1673,9 @@ function ContactScreen() {
             <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[3px]">
               Phone
             </p>
-            <a
-              href={c.phoneHref}
-              className="block font-['Inter'] text-[10px] text-[#1472ff] underline outline-none focus-visible:ring-2 focus-visible:ring-[#1472ff] rounded-sm"
-            >
+            <p className="font-['Inter'] text-[10px] text-[#1a1a1c]">
               {c.phone}
-            </a>
+            </p>
           </div>
         </>
       )}
