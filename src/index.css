@@ -2,9 +2,17 @@
 @import 'tailwindcss';
 
 html,
-body,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;          /* no main-page scroll */
+  overscroll-behavior: none; /* no pull-to-refresh / bounce */
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+}
 #root {
   height: 100%;
+  overflow: hidden;
 }
 
 /* Subtle iPod-style scrollbar */

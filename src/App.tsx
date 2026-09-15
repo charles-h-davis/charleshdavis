@@ -9,12 +9,6 @@ import {
 } from "react";
 import svgPaths from "@/components/svg-6elc3cwcuu";
 
-type SkillCategoryId =
-  | "finance"
-  | "technical"
-  | "research"
-  | "communication"
-  | "other";
 type BootPhase = "idle" | "powering-on" | "booting" | "revealing" | "done";
 
 // ===== SITE / BRAND SETTINGS =====
@@ -22,7 +16,7 @@ type BootPhase = "idle" | "powering-on" | "booting" | "revealing" | "done";
 const PORTFOLIO_DATA = {
   site: {
     displayName: "Charles Davis",
-    subtitle: "Financial Services",
+    subtitle: "",
     bootPortfolioName: "CHARLES DAVIS PORTFOLIO",
     bootIconImage: "/assets/images/boot/bootlogo.jpg",
     bootIconAlt: "Portfolio icon",
@@ -33,14 +27,18 @@ const PORTFOLIO_DATA = {
   // introduction, interests, location.
   aboutMe: {
     name: "Charles Davis",
-    focus: "Financial Services",
-    roleSubtitle: "Student · Oxford, UK",
+    focus: "",
+    roleSubtitle: "2nd Year Undergraduate",
     profileImage: "/assets/images/aboutme/profile.jpg",
     profileImageAlt: "Charles Davis profile photo",
     introduction: `I'm a student driven by curiosity and a passion 
       for tackling challenging problems by turning ideas into useful, 
       real-world projects. When I'm not working on finance-focused 
       work, you can usually find me brewing a great cup of coffee. `,
+    whyportfolio: `The iPod format of the portfolio was chosen due to 
+      my interest in music. It allows me to record my performances and 
+      store them in a customised location, presented alongside my 
+      personal achievements and experiences.`,
     interests: "Coffee, Tennis, Jazz, Watch making, Piano, Guitar, Cornet",
     location: "Oxford, UK",
   },
@@ -372,7 +370,7 @@ const PORTFOLIO_DATA = {
       activities:
         "Warwick Finance Society, Warwick Hedge Fund Society, Statistics Society",
       highlights: "1st Year: 69%",
-      previewMeta: "Degree · In progress",
+      previewMeta: "Degree · 2025-2029",
       previewImage: "/assets/images/education/uniofwarwick.jpg",
       previewImageAlt: "The University of Warwick",
       detailImage: "/assets/images/education/uniofwarwickdetailed.jpg",
@@ -392,7 +390,7 @@ const PORTFOLIO_DATA = {
       activities:
         "School events pianist, GCSE Mathematics & Music tutor, EPQ on Machine Learning, Student Robotics",
       highlights: "Received Further Mathematics Award",
-      previewMeta: "A*A*A*A* · 2023–2025",
+      previewMeta: "A*A*A*A* · 2023-2025",
       previewImage: "/assets/images/education/thehenryboxschool.jpg",
       previewImageAlt: "The Henry Box Sixth Form",
       detailImage: "/assets/images/education/thehenryboxschooldetailed.jpg",
@@ -400,435 +398,6 @@ const PORTFOLIO_DATA = {
       imageBg: "#d8f8eb",
     },
   ],
-
-  // ===== SKILLS =====
-  // Edit category summary text and skill descriptions.
-  // skillIds: order determines display order within the category screen.
-  // Each skill's projectIds and experienceIds link to the ids above.
-  // Displayed project/experience names are derived automatically from those ids.
-  skills: {
-    categories: [
-      {
-        id: "finance" as SkillCategoryId,
-        name: "Finance & Analysis",
-        icon: "linechart",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        summary:
-          "[Short description of your finance and analysis capabilities — e.g., quantitative modelling, valuation, and market analysis. Replace before publishing.]",
-        skillIds: [
-          "fin-modelling",
-          "fin-dcf",
-          "fin-comps",
-          "fin-statements",
-          "fin-forecasting",
-          "fin-marketresearch",
-        ],
-        iconImage: "/images/skills/finance-icon.png",
-        iconAlt: "Finance & Analysis",
-      },
-      {
-        id: "technical" as SkillCategoryId,
-        name: "Technical Tools",
-        icon: "tool",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        summary:
-          "[Short description of your technical toolkit — e.g., Excel, Python, SQL, and data platforms. Replace before publishing.]",
-        skillIds: [
-          "tech-excel",
-          "tech-ppt",
-          "tech-python",
-          "tech-sql",
-          "tech-bi",
-          "tech-other",
-        ],
-        iconImage: "/images/skills/technical-icon.png",
-        iconAlt: "Technical Tools",
-      },
-      {
-        id: "research" as SkillCategoryId,
-        name: "Research & Data",
-        icon: "barchart",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        summary:
-          "[Short description of your research and data skills — e.g., qualitative and quantitative research, data visualisation. Replace before publishing.]",
-        skillIds: [
-          "res-data",
-          "res-industry",
-          "res-company",
-          "res-dataviz",
-          "res-writing",
-        ],
-        iconImage: "/images/skills/research-icon.png",
-        iconAlt: "Research & Data",
-      },
-      {
-        id: "communication" as SkillCategoryId,
-        name: "Communication",
-        icon: "speech",
-        bg: "#f8ddf0",
-        stroke: "#aa1a7a",
-        summary:
-          "[Short description of your communication skills — e.g., clear written and verbal communication with stakeholders. Replace before publishing.]",
-        skillIds: [
-          "com-presdesign",
-          "com-written",
-          "com-stakeholder",
-          "com-team",
-        ],
-        iconImage: "/images/skills/communication-icon.png",
-        iconAlt: "Communication",
-      },
-      {
-        id: "other" as SkillCategoryId,
-        name: "Other Skills",
-        icon: "star",
-        bg: "#f8f0d8",
-        stroke: "#8a7010",
-        summary:
-          "[Short description of additional skills — e.g., project management, problem solving, and attention to detail. Replace before publishing.]",
-        skillIds: ["oth-projmgmt", "oth-problem", "oth-detail", "oth-other"],
-        iconImage: "/images/skills/other-skills-icon.png",
-        iconAlt: "Other Skills",
-      },
-    ],
-    // Each skill item has a stable id, description, and linked project/experience ids.
-    // Displayed names are derived automatically — do not duplicate titles here.
-    items: [
-      // Finance & Analysis
-      {
-        id: "fin-modelling",
-        name: "Financial Modelling",
-        description:
-          "[One-sentence description — e.g., 'Built integrated 3-statement models to support investment analysis. Replace before publishing.']",
-        projectIds: ["proj-1", "proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "linechart",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/financial-modelling-icon.png",
-        iconAlt: "Financial Modelling",
-      },
-      {
-        id: "fin-dcf",
-        name: "DCF Valuation",
-        description:
-          "[One-sentence description — e.g., 'Applied discounted cash flow analysis to value companies using comparable assumptions. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "linechart",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/dcf-valuation-icon.png",
-        iconAlt: "DCF Valuation",
-      },
-      {
-        id: "fin-comps",
-        name: "Comparable Company Analysis",
-        description:
-          "[One-sentence description — e.g., 'Conducted comparable company analysis using relevant industry multiples. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-2"],
-        icon: "barchart",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/comparable-company-analysis-icon.png",
-        iconAlt: "Comparable Company Analysis",
-      },
-      {
-        id: "fin-statements",
-        name: "Financial Statement Analysis",
-        description:
-          "[One-sentence description — e.g., 'Analysed income statements, balance sheets, and cash flows to assess financial health. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-1"],
-        icon: "scroll",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/financial-statement-analysis-icon.png",
-        iconAlt: "Financial Statement Analysis",
-      },
-      {
-        id: "fin-forecasting",
-        name: "Forecasting & Scenario Analysis",
-        description:
-          "[One-sentence description — e.g., 'Built scenario analysis models to evaluate performance under different assumptions. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-2"],
-        icon: "linechart",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/forecasting-scenario-analysis-icon.png",
-        iconAlt: "Forecasting & Scenario Analysis",
-      },
-      {
-        id: "fin-marketresearch",
-        name: "Market Research",
-        description:
-          "[One-sentence description — e.g., 'Conducted primary and secondary market research to identify trends and opportunities. Replace before publishing.']",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-3"],
-        icon: "search",
-        bg: "#d8f0e8",
-        stroke: "#1a8a5f",
-        iconImage: "/images/skills/market-research-icon.png",
-        iconAlt: "Market Research",
-      },
-      // Technical Tools
-      {
-        id: "tech-excel",
-        name: "Microsoft Excel",
-        description:
-          "[One-sentence description — e.g., 'Used advanced Excel for modelling, data analysis, and dynamic dashboards. Replace before publishing.']",
-        projectIds: ["proj-1", "proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "tool",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/excel-icon.png",
-        iconAlt: "Microsoft Excel",
-      },
-      {
-        id: "tech-ppt",
-        name: "PowerPoint",
-        description:
-          "[One-sentence description — e.g., 'Created clear and professional presentation decks for stakeholder and client use. Replace before publishing.']",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-2"],
-        icon: "pen",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/powerpoint-icon.png",
-        iconAlt: "PowerPoint",
-      },
-      {
-        id: "tech-python",
-        name: "Python",
-        description:
-          "[One-sentence description — e.g., 'Used Python for data cleaning, analysis, and visualisation tasks. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "tool",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/python-icon.png",
-        iconAlt: "Python",
-      },
-      {
-        id: "tech-sql",
-        name: "SQL",
-        description:
-          "[One-sentence description — e.g., 'Wrote SQL queries to extract and analyse structured datasets. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "tool",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/sql-icon.png",
-        iconAlt: "SQL",
-      },
-      {
-        id: "tech-bi",
-        name: "Power BI / Tableau",
-        description:
-          "[One-sentence description — e.g., 'Built interactive dashboards to communicate key metrics and findings. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-2"],
-        icon: "barchart",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/power-bi-tableau-icon.png",
-        iconAlt: "Power BI / Tableau",
-      },
-      {
-        id: "tech-other",
-        name: "Other Tool",
-        description:
-          "[One-sentence description — replace with a real tool and description before publishing.]",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-3"],
-        icon: "tool",
-        bg: "#dde6f8",
-        stroke: "#1a5faa",
-        iconImage: "/images/skills/other-tool-icon.png",
-        iconAlt: "Other Tool",
-      },
-      // Research & Data
-      {
-        id: "res-data",
-        name: "Data Analysis",
-        description:
-          "[One-sentence description — e.g., 'Analysed quantitative datasets to draw actionable conclusions. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "barchart",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        iconImage: "/images/skills/data-analysis-icon.png",
-        iconAlt: "Data Analysis",
-      },
-      {
-        id: "res-industry",
-        name: "Industry Research",
-        description:
-          "[One-sentence description — e.g., 'Conducted industry research to identify competitive dynamics and market opportunities. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-2"],
-        icon: "search",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        iconImage: "/images/skills/industry-research-icon.png",
-        iconAlt: "Industry Research",
-      },
-      {
-        id: "res-company",
-        name: "Company Research",
-        description:
-          "[One-sentence description — e.g., 'Researched company fundamentals, business models, and performance drivers. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "folder",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        iconImage: "/images/skills/company-research-icon.png",
-        iconAlt: "Company Research",
-      },
-      {
-        id: "res-dataviz",
-        name: "Data Visualisation",
-        description:
-          "[One-sentence description — e.g., 'Visualised complex data in clear, accessible charts and dashboards. Replace before publishing.']",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-2"],
-        icon: "linechart",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        iconImage: "/images/skills/data-visualisation-icon.png",
-        iconAlt: "Data Visualisation",
-      },
-      {
-        id: "res-writing",
-        name: "Report Writing",
-        description:
-          "[One-sentence description — e.g., 'Produced structured written reports summarising research findings for stakeholders. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-3"],
-        icon: "scroll",
-        bg: "#e8ddf8",
-        stroke: "#5a1aaa",
-        iconImage: "/images/skills/report-writing-icon.png",
-        iconAlt: "Report Writing",
-      },
-      // Communication
-      {
-        id: "com-presdesign",
-        name: "Presentation Design",
-        description:
-          "[One-sentence description — e.g., 'Designed compelling presentation slides for client and stakeholder briefings. Replace before publishing.']",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-1"],
-        icon: "pen",
-        bg: "#f8ddf0",
-        stroke: "#aa1a7a",
-        iconImage: "/images/skills/presentation-design-icon.png",
-        iconAlt: "Presentation Design",
-      },
-      {
-        id: "com-written",
-        name: "Written Communication",
-        description:
-          "[One-sentence description — e.g., 'Produced clear written documents including reports, memos, and briefs. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-2"],
-        icon: "scroll",
-        bg: "#f8ddf0",
-        stroke: "#aa1a7a",
-        iconImage: "/images/skills/written-communication-icon.png",
-        iconAlt: "Written Communication",
-      },
-      {
-        id: "com-stakeholder",
-        name: "Stakeholder Communication",
-        description:
-          "[One-sentence description — e.g., 'Communicated findings and recommendations clearly to stakeholders at different levels. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "speech",
-        bg: "#f8ddf0",
-        stroke: "#aa1a7a",
-        iconImage: "/images/skills/stakeholder-communication-icon.png",
-        iconAlt: "Stakeholder Communication",
-      },
-      {
-        id: "com-team",
-        name: "Team Collaboration",
-        description:
-          "[One-sentence description — e.g., 'Worked effectively within cross-functional teams on joint projects and deliverables. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-3"],
-        icon: "speech",
-        bg: "#f8ddf0",
-        stroke: "#aa1a7a",
-        iconImage: "/images/skills/team-collaboration-icon.png",
-        iconAlt: "Team Collaboration",
-      },
-      // Other Skills
-      {
-        id: "oth-projmgmt",
-        name: "Project Management",
-        description:
-          "[One-sentence description — e.g., 'Planned and managed project tasks to deliver on time and within scope. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-2"],
-        icon: "tool",
-        bg: "#f8f0d8",
-        stroke: "#8a7010",
-        iconImage: "/images/skills/project-management-icon.png",
-        iconAlt: "Project Management",
-      },
-      {
-        id: "oth-problem",
-        name: "Problem Solving",
-        description:
-          "[One-sentence description — e.g., 'Applied structured thinking to identify root causes and develop workable solutions. Replace before publishing.']",
-        projectIds: ["proj-2"],
-        experienceIds: ["exp-1"],
-        icon: "star",
-        bg: "#f8f0d8",
-        stroke: "#8a7010",
-        iconImage: "/images/skills/problem-solving-icon.png",
-        iconAlt: "Problem Solving",
-      },
-      {
-        id: "oth-detail",
-        name: "Attention to Detail",
-        description:
-          "[One-sentence description — e.g., 'Reviewed outputs carefully to ensure accuracy and quality across all deliverables. Replace before publishing.']",
-        projectIds: ["proj-1"],
-        experienceIds: ["exp-3"],
-        icon: "badge",
-        bg: "#f8f0d8",
-        stroke: "#8a7010",
-        iconImage: "/images/skills/attention-to-detail-icon.png",
-        iconAlt: "Attention to Detail",
-      },
-      {
-        id: "oth-other",
-        name: "Other Skill",
-        description:
-          "[One-sentence description — replace with a real skill and description before publishing.]",
-        projectIds: ["proj-3"],
-        experienceIds: ["exp-2"],
-        icon: "star",
-        bg: "#f8f0d8",
-        stroke: "#8a7010",
-        iconImage: "/images/skills/other-skill-icon.png",
-        iconAlt: "Other Skill",
-      },
-    ],
-  },
 
   // ===== CERTIFICATIONS =====
   // Each certification has a unique id. Copy a complete object to add another.
@@ -906,7 +475,7 @@ const PORTFOLIO_DATA = {
     {
       id: 0,
       title: "Snowing in April",
-      artist: "Merlyn White-Aldworth",
+      artist: "Merlynfry",
       album: "Snowing in April",
       duration: "[1:36]",
       audioSrc: "/assets/music/SnowingInApril-MerlynJamesWhite-Aldworth.mp3",
@@ -919,7 +488,7 @@ const PORTFOLIO_DATA = {
     {
       id: 1,
       title: "Riding The Subway",
-      artist: "Merlyn White-Aldworth",
+      artist: "Merlynfry",
       album: "Riding The Subway",
       duration: "[1:24]",
       audioSrc: "/assets/music/RidingTheSubway-MerlynJamesWhite-Aldworth.mp3",
@@ -951,57 +520,44 @@ const PORTFOLIO_DATA = {
     email: "charles@charleshdavis.com",
     linkedin: "https://www.linkedin.com/in/charles-henry-davis",
     linkedinDisplay: "www.linkedin.com/in/charles-henry-davis",
-    phone: "+44 7342 180054",
+    phone: "Check CV",
     phoneHref: "tel:+447342180054",
     github: "",
     githubDisplay: "Coming Soon",
-    location: "Oxford, UK",
+    location: "United Kingdom",
   },
 
   // ===== HELP TEXT =====
   // Edit helpTitle, intro, returnHint, and controls entries.
   // Each controls entry is [heading, description].
   help: {
-    title: "iPod Portfolio Help",
+    title: "Help",
     intro: "How to navigate this portfolio",
     returnHint: "Press MENU or Escape to return to your previous screen.",
     controls: [
       [
-        "Scroll Wheel · Arrow Keys",
-        "Drag up or down on the Click Wheel ring, use the mouse wheel / trackpad on the wheel, or arrow key up/down. Each drag step or keystroke moves one item in the list, or scrolls content on a reading page.",
+        "Navigate",
+        "Press/scroll on the screen window | Use arrow keys up/down | Drag click wheel ring up/down | Scroll on click wheel ring",
       ],
       [
-        "Centre Select · Enter · Space",
-        "Press the centre button of the Click Wheel, or press Enter or Space on a keyboard. Opens the highlighted menu item or confirms a selection.",
+        "Select",
+        "Press highlighted items on the screen window | Press enter or space on a keyboard | Press the centre button on the click wheel",
       ],
       [
-        "MENU · Escape",
-        "Press the MENU label at the top of the Click Wheel, or press Escape on a keyboard. Returns to the previous screen.",
+        "Back",
+        "Press the MENU label on the click wheel | Press escape on a keyboard",
       ],
       [
-        "Previous (|◀◀)",
-        "Press the left arrow on the Click Wheel. Restarts the current track if more than a few seconds have played; otherwise goes to the previous track.",
+        "Previous Track · Restart Track",
+        "Press the left arrow on the click wheel",
       ],
+      ["Next Track", "Press the right arrow on the click wheel"],
       [
-        "Next (▶▶|)",
-        "Press the right arrow on the Click Wheel. Advances to the next track.",
+        "Play · Pause",
+        "Press the play/pause button at the bottom of the click wheel",
       ],
-      [
-        "Play / Pause (▶⏸)",
-        "Press the bottom of the Click Wheel. Starts or pauses audio playback.",
-      ],
-      [
-        "Mute / Unmute",
-        "Click the volume icon in the top-right corner of the page. Audio starts muted.",
-      ],
-      [
-        "Help button",
-        "Click the Help button in the top-right corner to open this screen from anywhere. Press MENU or Escape to return to wherever you were.",
-      ],
-      [
-        "Search",
-        "Open Projects or Experience from the Main Menu. Select 'Search Projects' or 'Search Experience' at the top of each list. Type to filter results live.",
-      ],
+      ["Mute · Unmute", "Press the volume icon at the top of the page"],
+      ["Help button", "Press the help icon at the top of the page"],
     ] as [string, string][],
   },
 
@@ -1042,7 +598,7 @@ interface Track {
 const TRACKS: Track[] = PORTFOLIO_DATA.tracks;
 
 function formatTime(s: number): string {
-  if (!isFinite(s) || s < 0) return "–:––";
+  if (!isFinite(s) || s < 0) return "-:--";
   const m = Math.floor(s / 60);
   return `${m}:${Math.floor(s % 60)
     .toString()
@@ -1056,7 +612,6 @@ type SubmenuId =
   | "Projects"
   | "Experience"
   | "Education"
-  | "Skills"
   | "Certifications";
 
 const MAIN_MENU = [
@@ -1065,7 +620,6 @@ const MAIN_MENU = [
   "Experience",
   "About Me",
   "Education",
-  // "Skills",
   "Certifications",
   "CV",
   "Contact",
@@ -1080,89 +634,11 @@ const SUBMENUS: Record<SubmenuId, string[]> = {
     ...PORTFOLIO_DATA.experience.map((e) => e.menuTitle),
   ],
   Education: PORTFOLIO_DATA.education.map((e) => e.menuTitle),
-  Skills: PORTFOLIO_DATA.skills.categories.map((c) => c.name),
   Certifications: PORTFOLIO_DATA.certifications.map((c) => c.title),
 };
 
 const SUBMENU_IDS = new Set<string>(Object.keys(SUBMENUS));
 const clamp = (i: number, max: number) => Math.max(0, Math.min(max, i));
-
-// ── Skills data — derived from PORTFOLIO_DATA ─────────────────────────────────
-
-interface SkillCategory {
-  id: SkillCategoryId;
-  name: string;
-  icon: string;
-  bg: string;
-  stroke: string;
-  summary: string;
-  count: string;
-  iconImage: string;
-  iconAlt: string;
-}
-interface SkillItem {
-  id: string;
-  name: string;
-  description: string;
-  projects: string;
-  experience: string;
-  icon: string;
-  bg: string;
-  stroke: string;
-  iconImage: string;
-  iconAlt: string;
-}
-
-const SKILL_CATEGORIES: SkillCategory[] = PORTFOLIO_DATA.skills.categories.map(
-  (cat) => ({
-    id: cat.id,
-    name: cat.name,
-    icon: cat.icon,
-    bg: cat.bg,
-    stroke: cat.stroke,
-    summary: cat.summary,
-    count: `${cat.skillIds.length} skill${
-      cat.skillIds.length !== 1 ? "s" : ""
-    }`,
-    iconImage: cat.iconImage,
-    iconAlt: cat.iconAlt,
-  }),
-);
-
-const SKILL_ITEMS: Record<SkillCategoryId, SkillItem[]> = (() => {
-  const result: Partial<Record<SkillCategoryId, SkillItem[]>> = {};
-  for (const cat of PORTFOLIO_DATA.skills.categories) {
-    result[cat.id] = cat.skillIds.map((sid) => {
-      const item = PORTFOLIO_DATA.skills.items.find((i) => i.id === sid)!;
-      const projectNames = item.projectIds
-        .map(
-          (pid) =>
-            PORTFOLIO_DATA.projects.find((p) => p.id === pid)?.title ?? pid,
-        )
-        .join(", ");
-      const expNames = item.experienceIds
-        .map(
-          (eid) =>
-            PORTFOLIO_DATA.experience.find((e) => e.id === eid)?.menuTitle ??
-            eid,
-        )
-        .join(", ");
-      return {
-        id: item.id,
-        name: item.name,
-        description: item.description,
-        projects: projectNames,
-        experience: expNames,
-        icon: item.icon,
-        bg: item.bg,
-        stroke: item.stroke,
-        iconImage: item.iconImage,
-        iconAlt: item.iconAlt,
-      };
-    });
-  }
-  return result as Record<SkillCategoryId, SkillItem[]>;
-})();
 
 // ── Certifications — derived from PORTFOLIO_DATA ──────────────────────────────
 
@@ -1232,11 +708,6 @@ PORTFOLIO_DATA.education.forEach((e) => {
   EDUCATION_BY_TITLE[e.menuTitle] = e;
 });
 
-const SKILL_CATEGORY_BY_NAME: Record<string, SkillCategory> = {};
-SKILL_CATEGORIES.forEach((c) => {
-  SKILL_CATEGORY_BY_NAME[c.name] = c;
-});
-
 // ── View type ─────────────────────────────────────────────────────────────────
 
 type View =
@@ -1248,8 +719,7 @@ type View =
       title: string;
       parentKind: "mainMenu" | "submenu";
       parentId?: SubmenuId;
-    }
-  | { kind: "skillsCategory"; categoryId: SkillCategoryId };
+    };
 
 // ── Utility item previews (icon-only fallback for action/info rows) ───────────
 
@@ -1917,6 +1387,15 @@ function AboutMeScreen() {
       <div className="border-t border-[#ebebed] mx-[8px]" />
       <div className="px-[8px] py-[5px]">
         <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[2px]">
+          Why This Portfolio
+        </p>
+        <p className="font-['Inter'] text-[10px] text-[#1a1a1c] leading-[1.5]">
+          {am.whyportfolio}
+        </p>
+      </div>
+      <div className="border-t border-[#ebebed] mx-[8px]" />
+      <div className="px-[8px] py-[5px]">
+        <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[2px]">
           Current Interests
         </p>
         <p className="font-['Inter'] text-[10px] text-[#1a1a1c] leading-[1.5]">
@@ -2051,113 +1530,6 @@ function EducationDetailScreen({ menuTitle }: { menuTitle: string }) {
   );
 }
 
-// ── Skills category screen ────────────────────────────────────────────────────
-
-function SkillPreviewPanel({
-  skill,
-  bg,
-  stroke,
-}: {
-  skill: SkillItem;
-  bg: string;
-  stroke: string;
-}) {
-  return (
-    <div className="bg-[#f8f9fa] flex flex-1 flex-col gap-[8px] items-center justify-center min-w-0 p-[10px] overflow-hidden">
-      <div className="relative rounded-[6px] size-[72px] shrink-0 overflow-hidden bg-[#f0f0f2]">
-        <ImageContain src={skill.iconImage} alt={skill.iconAlt} />
-      </div>
-      <div className="flex flex-col gap-[3px] w-full">
-        <p className="font-['Inter'] font-bold text-[10px] text-black text-center leading-[1.3]">
-          {skill.name}
-        </p>
-        <p className="font-['Inter'] text-[8px] text-[#555] text-center leading-[1.4]">
-          {skill.description}
-        </p>
-        <div className="border-t border-[#ebebed] mt-[4px] mb-[2px]" />
-        <p className="font-['Inter'] text-[7px] font-bold text-[#8a8d96] uppercase tracking-[0.05em]">
-          Projects
-        </p>
-        <p className="font-['Inter'] text-[8px] text-[#444] leading-[1.4]">
-          {skill.projects}
-        </p>
-        <p className="font-['Inter'] text-[7px] font-bold text-[#8a8d96] uppercase tracking-[0.05em] mt-[2px]">
-          Experience
-        </p>
-        <p className="font-['Inter'] text-[8px] text-[#444] leading-[1.4]">
-          {skill.experience}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-interface SkillCategoryScreenProps {
-  categoryId: SkillCategoryId;
-  items: SkillItem[];
-  selectedIdx: number;
-  onHighlight: (idx: number) => void;
-}
-
-// Individual skill rows have no chevron or confirmation icon — they are terminal preview-only items
-function SkillCategoryScreen({
-  categoryId,
-  items,
-  selectedIdx,
-  onHighlight,
-}: SkillCategoryScreenProps) {
-  const cat = SKILL_CATEGORIES.find((c) => c.id === categoryId)!;
-  const selectedBtnRef = useRef<HTMLButtonElement | null>(null);
-  useEffect(() => {
-    selectedBtnRef.current?.scrollIntoView({
-      block: "nearest",
-      behavior: "smooth",
-    });
-  }, [selectedIdx]);
-  const skill = items[selectedIdx];
-  return (
-    <div className="flex flex-1 min-h-0 w-full overflow-hidden">
-      <div className="relative w-[146px] shrink-0 h-full">
-        <div className="flex flex-col py-[4px] overflow-y-auto ipod-scroll h-full">
-          {items.map((item, i) => {
-            const highlighted = i === selectedIdx;
-            return (
-              <button
-                key={item.id}
-                ref={highlighted ? selectedBtnRef : null}
-                onClick={() => onHighlight(i)}
-                onFocus={() => onHighlight(i)}
-                tabIndex={0}
-                className={[
-                  "flex items-center px-[8px] py-[2px] w-full text-left shrink-0 outline-none",
-                  "focus-visible:ring-2 focus-visible:ring-[#1472ff] focus-visible:ring-inset",
-                  highlighted ? "bg-[#1472ff]" : "hover:bg-[#e8f0ff]",
-                ].join(" ")}
-              >
-                <span
-                  className={[
-                    "font-['Inter'] text-[10px] flex-1 overflow-hidden text-ellipsis whitespace-nowrap",
-                    highlighted
-                      ? "font-bold text-white"
-                      : "font-medium text-black",
-                  ].join(" ")}
-                >
-                  {item.name}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-        <div
-          aria-hidden
-          className="absolute border-[#d1d3d6] border-r border-solid inset-0 pointer-events-none"
-        />
-      </div>
-      <SkillPreviewPanel skill={skill} bg={cat.bg} stroke={cat.stroke} />
-    </div>
-  );
-}
-
 // ── Certification preview panel ───────────────────────────────────────────────
 
 function CertPreviewPanel({ data }: { data: CertificationData }) {
@@ -2273,6 +1645,15 @@ function ContactScreen() {
       </div>
       <div className="border-t border-[#ebebed] mx-[8px]" />
       <div className="px-[8px] py-[4px]">
+        <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[1px]">
+          Location
+        </p>
+        <p className="font-['Inter'] text-[10px] text-[#1a1a1c]">
+          {c.location}
+        </p>
+      </div>
+      <div className="border-t border-[#ebebed] mx-[8px]" />
+      <div className="px-[8px] py-[4px]">
         <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[3px]">
           LinkedIn
         </p>
@@ -2284,15 +1665,6 @@ function ContactScreen() {
         >
           {c.linkedinDisplay}
         </a>
-      </div>
-      <div className="border-t border-[#ebebed] mx-[8px]" />
-      <div className="px-[8px] py-[4px]">
-        <p className="font-['Inter'] text-[8px] font-bold text-[#8a8d96] uppercase tracking-[0.06em] mb-[1px]">
-          Location
-        </p>
-        <p className="font-['Inter'] text-[10px] text-[#1a1a1c]">
-          {c.location}
-        </p>
       </div>
       {c.phone && (
         <>
@@ -2629,7 +2001,7 @@ function ProjectDetailScreen({ title }: { title: string }) {
         </div>
         <div className="flex gap-[2px]">
           <div
-            className="relative w-1/2 h-[76px] shrink-0 overflow-hidden"
+            className="relative w-[calc(50%-1px)] h-[76px] shrink-0 overflow-hidden"
             style={{ backgroundColor: d.imageBg }}
           >
             <ImageCover
@@ -2638,7 +2010,7 @@ function ProjectDetailScreen({ title }: { title: string }) {
             />
           </div>
           <div
-            className="relative w-1/2 h-[76px] shrink-0 overflow-hidden"
+            className="relative w-[calc(50%-1px)] h-[76px] shrink-0 overflow-hidden"
             style={{ backgroundColor: d.imageBg }}
           >
             <ImageCover
@@ -2882,6 +2254,7 @@ interface SplitScreenProps {
   items: string[];
   selectedIndex: number;
   onSelect: (index: number) => void;
+  onActivate: (index: number) => void;
   renderPreview: () => React.ReactNode;
   terminalItems?: ReadonlySet<string>; // items that do not open a submenu/detail — no chevron shown
 }
@@ -2889,6 +2262,7 @@ function SplitScreen({
   items,
   selectedIndex,
   onSelect,
+  onActivate,
   renderPreview,
   terminalItems,
 }: SplitScreenProps) {
@@ -2912,7 +2286,7 @@ function SplitScreen({
                 role="menuitem"
                 aria-label={item}
                 aria-current={active ? "true" : undefined}
-                onClick={() => onSelect(i)}
+                onPointerUp={() => (active ? onActivate(i) : onSelect(i))}
                 className={[
                   "flex items-center justify-between px-[8px] py-[2px] w-full text-left shrink-0 outline-none",
                   "focus-visible:ring-2 focus-visible:ring-[#1472ff] focus-visible:ring-inset",
@@ -3169,29 +2543,6 @@ function SubMenuPreview({
       </div>
     );
 
-  // Skill categories: image + name/summary/count
-  const skillCat = SKILL_CATEGORY_BY_NAME[itemName];
-  if (skillCat) {
-    return (
-      <div className="bg-[#f8f9fa] flex flex-1 flex-col gap-[8px] items-center justify-center min-w-0 p-[12px] overflow-hidden">
-        <div className="relative rounded-[6px] size-[80px] shrink-0 overflow-hidden bg-[#f0f0f2]">
-          <ImageContain src={skillCat.iconImage} alt={skillCat.iconAlt} />
-        </div>
-        <div className="flex flex-col gap-[3px] items-center text-center">
-          <p className="font-['Inter'] font-bold text-[11px] text-black text-center">
-            {skillCat.name}
-          </p>
-          <p className="font-['Inter'] text-[8px] text-[#666] text-center leading-[1.4]">
-            {skillCat.summary}
-          </p>
-          <p className="font-['Inter'] text-[8px] text-[#999] text-center">
-            {skillCat.count}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   // Certifications: credential preview panel
   const cert = CERT_BY_TITLE[itemName];
   if (cert) return <CertPreviewPanel data={cert} />;
@@ -3414,8 +2765,8 @@ function Ipod({
                       <p
                         style={{
                           fontFamily: "Inter, sans-serif",
-                          fontWeight: 700,
-                          fontSize: "7.5px",
+                          fontWeight: 800,
+                          fontSize: "8.5px",
                           letterSpacing: "0.14em",
                           color: "#8a8d96",
                           textAlign: "center",
@@ -3426,15 +2777,15 @@ function Ipod({
                       <p
                         style={{
                           fontFamily: "Inter, sans-serif",
-                          fontWeight: 400,
-                          fontSize: "6.5px",
+                          fontWeight: 600,
+                          fontSize: "7.5px",
                           letterSpacing: "0.07em",
-                          color: "#4a4d50",
+                          color: "#5e6863",
                           textAlign: "center",
                           marginTop: 5,
                         }}
                       >
-                        OR PRESS ENTER
+                        PLEASE ZOOM YOUR WINDOW FOR THE BEST EXPERIENCE
                       </p>
                     </button>
                   )}
@@ -3567,7 +2918,7 @@ function Ipod({
             className="absolute -translate-x-1/2 left-1/2 top-[18px] z-10 outline-none focus-visible:ring-2 focus-visible:ring-[#1472ff] rounded-sm"
           >
             <span className="font-['Inter'] font-bold text-[10px] text-[#8a8d96] leading-none">
-              MENU
+              BACK
             </span>
           </button>
           <button
@@ -3747,9 +3098,6 @@ export default function App() {
     {},
   );
   const [songsSelectedIdx, setSongsSelectedIdx] = useState(0);
-  const [skillItemIndices, setSkillItemIndices] = useState<
-    Partial<Record<SkillCategoryId, number>>
-  >({});
   const contentScrollRef = useRef<HTMLDivElement | null>(null);
   const searchControlRef = useRef<SearchScreenHandle | null>(null);
 
@@ -3760,7 +3108,6 @@ export default function App() {
   const mainMenuIndexRef = useRef(mainMenuIndex);
   const submenuIndicesRef = useRef(submenuIndices);
   const songsSelectedIdxRef = useRef(songsSelectedIdx);
-  const skillItemIndicesRef = useRef(skillItemIndices);
   useEffect(() => {
     viewRef.current = view;
   }, [view]);
@@ -3773,9 +3120,6 @@ export default function App() {
   useEffect(() => {
     songsSelectedIdxRef.current = songsSelectedIdx;
   }, [songsSelectedIdx]);
-  useEffect(() => {
-    skillItemIndicesRef.current = skillItemIndices;
-  }, [skillItemIndices]);
   useEffect(() => {
     preHelpViewRef.current = preHelpView;
   }, [preHelpView]);
@@ -4044,10 +3388,6 @@ export default function App() {
       const item = SUBMENUS[v.id][idx];
       if (item === "Search Projects" || item === "Search Experience") {
         setView({ kind: "search", parentId: v.id });
-      } else if (v.id === "Skills") {
-        // Skills categories open a second-level skill screen
-        const cat = SKILL_CATEGORY_BY_NAME[item];
-        if (cat) setView({ kind: "skillsCategory", categoryId: cat.id });
       } else if (v.id === "Certifications") {
         // Certifications are terminal — no navigation
       } else {
@@ -4058,8 +3398,6 @@ export default function App() {
           parentId: v.id,
         });
       }
-    } else if (v.kind === "skillsCategory") {
-      // Individual skills are terminal — no navigation, no confirmation
     } else if (v.kind === "search") {
       searchControlRef.current?.activateSelection();
     } else if (
@@ -4088,8 +3426,6 @@ export default function App() {
       setView({ kind: "mainMenu" });
     } else if (v.kind === "search") {
       setView({ kind: "submenu", id: v.parentId });
-    } else if (v.kind === "skillsCategory") {
-      setView({ kind: "submenu", id: "Skills" });
     } else if (v.kind === "detail") {
       if (v.parentKind === "submenu" && v.parentId)
         setView({ kind: "submenu", id: v.parentId });
@@ -4098,6 +3434,7 @@ export default function App() {
   }, []);
 
   const handleScrollDelta = useCallback((delta: number) => {
+    const SCROLL_PX = 42;
     const v = viewRef.current;
     if (v.kind === "mainMenu") {
       setMainMenuIndex((i) => clamp(i + delta, MAIN_MENU.length - 1));
@@ -4110,13 +3447,6 @@ export default function App() {
       }));
     } else if (v.kind === "search") {
       searchControlRef.current?.moveSelection(delta);
-    } else if (v.kind === "skillsCategory") {
-      const max = SKILL_ITEMS[v.categoryId].length - 1;
-      const id = v.categoryId;
-      setSkillItemIndices((prev) => ({
-        ...prev,
-        [id]: clamp((prev[id] ?? 0) + delta, max),
-      }));
     } else if (
       v.kind === "detail" &&
       v.title === "Songs" &&
@@ -4125,7 +3455,7 @@ export default function App() {
       setSongsSelectedIdx((prev) => clamp(prev + delta, TRACKS.length - 1));
     } else {
       contentScrollRef.current?.scrollBy({
-        top: delta * 30,
+        top: delta * SCROLL_PX,
         behavior: "smooth",
       });
     }
@@ -4140,9 +3470,35 @@ export default function App() {
     }
   }, []);
 
+  // Second-click on an already-highlighted item — same logic as Enter/Space/center
+  const handleRowActivate = useCallback((index: number) => {
+    const v = viewRef.current;
+    if (v.kind === "mainMenu") {
+      const item = MAIN_MENU[index];
+      if (SUBMENU_IDS.has(item))
+        setView({ kind: "submenu", id: item as SubmenuId });
+      else setView({ kind: "detail", title: item, parentKind: "mainMenu" });
+    } else if (v.kind === "submenu") {
+      const id = v.id;
+      const item = SUBMENUS[id][index];
+      if (item === "Search Projects" || item === "Search Experience") {
+        setView({ kind: "search", parentId: id as SubmenuId });
+      } else if (id === "Certifications") {
+        // terminal — no navigation
+      } else {
+        setView({
+          kind: "detail",
+          title: item,
+          parentKind: "submenu",
+          parentId: id as SubmenuId,
+        });
+      }
+    }
+  }, []);
+
   // Global keyboard handler — registered once, reads live state through refs
   useEffect(() => {
-    const SCROLL_PX = 30;
+    const SCROLL_PX = 42;
     const handler = (e: KeyboardEvent) => {
       const active = document.activeElement as HTMLElement | null;
       if (
@@ -4179,28 +3535,6 @@ export default function App() {
           setView({ kind: "submenu", id: v.parentId });
         }
         // Enter: button handles natively via onClick
-        return;
-      }
-
-      // ── Skills category view ────────────────────────────────────────────
-      if (v.kind === "skillsCategory") {
-        const intercepted = ["ArrowUp", "ArrowDown", "Enter", " ", "Escape"];
-        if (!intercepted.includes(e.key)) return;
-        e.preventDefault();
-        const max = SKILL_ITEMS[v.categoryId].length - 1;
-        const id = v.categoryId;
-        if (e.key === "ArrowUp")
-          setSkillItemIndices((p) => ({
-            ...p,
-            [id]: clamp((p[id] ?? 0) - 1, max),
-          }));
-        if (e.key === "ArrowDown")
-          setSkillItemIndices((p) => ({
-            ...p,
-            [id]: clamp((p[id] ?? 0) + 1, max),
-          }));
-        // Enter/Space on individual skills: no action (terminal items)
-        if (e.key === "Escape") setView({ kind: "submenu", id: "Skills" });
         return;
       }
 
@@ -4262,9 +3596,6 @@ export default function App() {
           const item = SUBMENUS[id as SubmenuId][idx];
           if (item === "Search Projects" || item === "Search Experience") {
             setView({ kind: "search", parentId: id as SubmenuId });
-          } else if (id === "Skills") {
-            const cat = SKILL_CATEGORY_BY_NAME[item];
-            if (cat) setView({ kind: "skillsCategory", categoryId: cat.id });
           } else if (id === "Certifications") {
             // Certifications are terminal — no navigation
           } else {
@@ -4326,11 +3657,6 @@ export default function App() {
     if (v.kind === "mainMenu") return "Home";
     if (v.kind === "submenu") return v.id;
     if (v.kind === "search") return `Search ${v.parentId}`;
-    if (v.kind === "skillsCategory") {
-      return (
-        SKILL_CATEGORIES.find((c) => c.id === v.categoryId)?.name ?? "Skills"
-      );
-    }
     if (v.kind === "detail") {
       const { title } = v;
       if (title === "Now Playing") return "Now Playing";
@@ -4354,6 +3680,7 @@ export default function App() {
         items={MAIN_MENU}
         selectedIndex={mainMenuIndex}
         onSelect={handleRowSelect}
+        onActivate={handleRowActivate}
         renderPreview={() => (
           <MainMenuPreview track={TRACKS[currentTrackIdx]} />
         )}
@@ -4369,6 +3696,7 @@ export default function App() {
         items={items}
         selectedIndex={idx}
         onSelect={handleRowSelect}
+        onActivate={handleRowActivate}
         renderPreview={() => (
           <SubMenuPreview
             itemName={items[idx]}
@@ -4392,21 +3720,6 @@ export default function App() {
           setView({ kind: "detail", title, parentKind: "submenu", parentId })
         }
         onClose={() => setView({ kind: "submenu", id: parentId })}
-      />
-    );
-  } else if (view.kind === "skillsCategory") {
-    const { categoryId } = view;
-    const catItems = SKILL_ITEMS[categoryId];
-    const selIdx = skillItemIndices[categoryId] ?? 0;
-    viewKey = `skillsCat-${categoryId}`;
-    screenContent = (
-      <SkillCategoryScreen
-        categoryId={categoryId}
-        items={catItems}
-        selectedIdx={selIdx}
-        onHighlight={(idx) =>
-          setSkillItemIndices((prev) => ({ ...prev, [categoryId]: idx }))
-        }
       />
     );
   } else {
